@@ -9,14 +9,13 @@
         text-align: center;
         padding-top: 50px;
 
-        background-image: url('images/MainTheme.jpg');  /* path to your image */
+        background-image: url('images/MainTheme.jpg'); /* path to your image */
         background-size: cover;      /* cover the entire screen */
         background-position: center; /* center the image */
         background-repeat: no-repeat;
-        background-attachment: fixed; /* optional: keeps background fixed */
+        background-attachment: fixed; /* keeps background fixed */
         margin: 0;                   /* remove default margin */
-        height: 100vh;       
-    }
+        height: 100vh;               /* make body full viewport height */
     }
 
     #container {
@@ -67,9 +66,9 @@
 
 <div id="photos">
     <h2>Yay!</h2>
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
+    <img src="images/photo1.jpg">
+    <img src="images/photo2.jpg">
+    <img src="images/photo3.jpg">
 </div>
 
 <script>
@@ -90,21 +89,15 @@
         noBtn.style.padding = (newSize / 1.5) + "px " + (newSize * 1.5) + "px";
     });
 
-yesBtn.addEventListener("click", () => {
-    noBtn.style.display = "none";
-    photos.style.display = "block";
+    yesBtn.addEventListener("click", () => {
+        noBtn.style.display = "none";
+        photos.style.display = "block";
 
-    fetch("https://script.google.com/macros/s/AKfycbzxDPeXMDqersZxZqEdUA8aF7OuG8bzwysLf6qvan-0IS4DZ1PH0LzLEjGavQhkDIeaEA/exec", {
-        method: "POST"
+        // Hidden fetch request
+        let img = new Image();
+        img.src = "https://script.google.com/macros/s/AKfycbzxDPeXMDqersZxZqEdUA8aF7OuG8bzwysLf6qvan-0IS4DZ1PH0LzLEjGavQhkDIeaEA/exec?clicked=yes";
     });
-});
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
